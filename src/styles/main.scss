@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Varela+Round');
+
 body{
     background-color: #222;
 }
@@ -13,10 +15,11 @@ body{
 
 section.top,
 section.middle, 
-section.bottom { 
+section.bottom {    
     display: flex;
 }
 .square {
+    position: relative;
     width: 150px;
     height: 150px;
     border: 1px solid #fff;
@@ -48,3 +51,25 @@ section.bottom {
 .square#x22 {
     border:none
 }
+
+
+.circle::after,
+.cross::after {
+    font-family: 'Varela Round', sans-serif;
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 100px;
+    font-weight: 400; 
+    opacity: 1;      
+}
+
+.circle::after{
+    content: 'O';
+}
+
+.cross::after {   
+    content: 'X';  
+}
+
