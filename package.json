@@ -39,6 +39,8 @@
   "author": "Julian Leahy",
   "license": "ISC",
   "dependencies": {
+    "animated-scroll-to": "^1.1.8",
+    "aos": "^2.2.0",
     "jquery": "^3.3.1"
   }
 }
