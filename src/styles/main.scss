@@ -1,0 +1,50 @@
+body{
+    background-color: #222;
+}
+
+.wrapper {
+    width: 100%;
+}
+
+.board {
+    width: 450px;
+    margin: 100px auto;
+}
+
+section.top,
+section.middle, 
+section.bottom { 
+    display: flex;
+}
+.square {
+    width: 150px;
+    height: 150px;
+    border: 1px solid #fff;
+    flex: 1;
+}
+
+.square#x00, 
+.square#x01,
+.square#x03,
+.square#x04 {
+    border-top: none;
+    border-left: none;
+}
+
+.square#x02,
+.square#x05 {
+    border-top: none;
+    border-right: none;
+    border-left: none;
+}
+
+.square#x06,
+.square#x07 {
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+}
+
+.square#x08 {
+    border:none
+}
