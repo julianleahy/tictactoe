@@ -2,6 +2,7 @@
 
 body{
     background-color: #222;
+    font-family: 'Varela Round', sans-serif;
 }
 
 .wrapper {
@@ -81,7 +82,6 @@ section.bottom {
 
 .circle::after,
 .cross::after {
-    font-family: 'Varela Round', sans-serif;
     position: absolute;
     left: 50%; top: 50%;
     transform: translate(-50%, -50%);

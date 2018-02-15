@@ -3,7 +3,7 @@ import 'styles/normalize.css';
 import 'styles/main.scss';
 import 'styles/aos.css'
 
-import scrollTo from './scrollto';
+import {scrollTo, scrollEnd} from './scrollto';
 import {playState, isWinner, hasWon} from './ai';
 import winner from './winner';
 
@@ -33,6 +33,14 @@ $(function() {
         setTimeout(()=>{ai()},1000)
         
     });
+
+    $('.close').click(function(){
+        $('.modal').css('display', 'none');
+        scrollEnd();
+        setTimeout(function(){
+            $('.wrapper').addClass('noscroll');
+        },2500)
+    })
 
 
     // get row and column from squares id
