@@ -1,5 +1,6 @@
 export default function (combo, board) {
 
+    
     switch (combo) {
         case 'diagLeftToRight':
             $('.lr').css({ background: 'red' })
@@ -35,6 +36,12 @@ export default function (combo, board) {
         default:
             break;
     }
+
+    setTimeout(()=>{
+        $('.modal').css('display','block');
+        $('.gameover').text('Game Over! You Lost')
+    },2000)
+    
 
 
 

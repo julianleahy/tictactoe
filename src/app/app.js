@@ -86,12 +86,13 @@ $(function() {
     }
 
     const checkWin = () => {
-        if(isWinner(board) === 1){
-            // lost
+        if(isWinner(board) === 1  ){
             winner(hasWon(), board);
         }else if(isWinner(board) === -1){
-            // draw
-            console.log(hasWon(), board);
+            setTimeout(()=>{
+                $('.modal').css('display','block');
+                $('.gameover').text('Game Over! You Managed To Draw')
+            },2000)
         }
     }
     
