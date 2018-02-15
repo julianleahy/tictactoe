@@ -1,9 +1,16 @@
+import AOS from 'aos';
 import 'styles/normalize.css';
 import 'styles/main.scss';
+import 'styles/aos.css'
 
 import scrollTo from './scrollto';
 
 $(function() {
+
+    $('.square').attr({
+       'data-aos-anchor' :'#build',
+       'data-aos-anchor-placement' :'top-bottom'
+    })
 
 
     // default board setup
@@ -47,4 +54,8 @@ $(function() {
     });
     
 });
+
+AOS.init({
+    duration : 1000
+})
 
