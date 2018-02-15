@@ -4,7 +4,7 @@ import 'styles/main.scss';
 import 'styles/aos.css'
 
 import scrollTo from './scrollto';
-import {playState} from './ai';
+import {playState, isWinner} from './ai';
 
 $(function() {
 
@@ -35,24 +35,29 @@ $(function() {
         board[row][col] = false;
         outputTile();
         ai();
-  
+        
+       
     });
 
-    // loop over board if value is false add a cross
+    // loop over board 
+    // if value is false(player) add a cross 
+    // if value is true(Ai) add a circle 
     const outputTile = () => {
         for (var i = 0; i < board.length; i++) {
             for (var j = 0; j < board[i].length; j++) {
                 switch (board[i][j]) {
-                  case false :
-                    $(`#x${i}${j}`).addClass('cross');
-                    break;
-                  case true :
-                    $(`#x${i}${j}`).addClass('circle');
-                    break;
-                    
+                    case false:
+                        $(`#x${i}${j}`).addClass('cross');
+                        break;
+                    case true:
+                        $(`#x${i}${j}`).addClass('circle');
+                        break;
                 }
             }
         }
+        setTimeout(()=>{
+            checkWin();
+        },100)
     }
 
     // scroll to 
@@ -64,6 +69,16 @@ $(function() {
     const ai = () => {
         board = playState(board, true)[1];
         outputTile();
+        
+        
+    }
+
+    const checkWin = () => {
+        if(isWinner(board) === 1){
+            alert('You Lost')
+        }else if(isWinner(board) === -1){
+            alert('You Drew')
+        }
     }
     
 });
