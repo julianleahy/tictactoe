@@ -36,7 +36,7 @@ $(function() {
     });
 
     $('.close').click(function(){
-        $('.modal').css('display', 'none');
+        $('.modal').fadeOut('slow');
         scrollEnd();
         setTimeout(function(){
             $('.wrapper').addClass('noscroll');
@@ -58,8 +58,7 @@ $(function() {
         outputTile();
         AI = true;
         ai();
-        
-       
+          
     });
 
     // loop over board 
@@ -81,17 +80,13 @@ $(function() {
     
     }
 
-    
     const ai = () => {
         board = playState(board, true)[1];
         AI = false;
         setTimeout(()=>{
             outputTile();
             checkWin();
-        },1000,)
-       
-        
-        
+        },1000,)  
     }
 
     const checkWin = () => {

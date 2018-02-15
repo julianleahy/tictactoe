@@ -38,7 +38,7 @@ export default function (combo, board) {
     }
 
     setTimeout(()=>{
-        $('.modal').css('display','block');
+        $('.modal').fadeIn('slow');
         $('.gameover').text('Game Over! You Lost')
     },2000)
     
