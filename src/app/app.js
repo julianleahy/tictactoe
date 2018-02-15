@@ -23,10 +23,14 @@ $(function() {
         [null, null, null]
     ]
 
+    let AI = true;
+
 
     // get row and column from squares id
     // place false in corresponding index on board
     $('.square').click( function() {
+
+        if(AI) return;
 
         const cell = $(this).attr('id');
         const row = parseInt(cell[1]);
@@ -34,6 +38,7 @@ $(function() {
 
         board[row][col] = false;
         outputTile();
+        AI = true;
         ai();
         
        
@@ -69,6 +74,7 @@ $(function() {
 
     const ai = () => {
         board = playState(board, true)[1];
+        AI = false;
         outputTile();
         
         
