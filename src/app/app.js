@@ -1,7 +1,11 @@
 import 'styles/normalize.css';
 import 'styles/main.scss';
 
+import scrollTo from './scrollto';
+
 $(function() {
+
+
     // default board setup
     // when player places a tile the corresponding index will be marked as false
     // computers move will be marked as true
@@ -36,6 +40,11 @@ $(function() {
             }
         }
     }
+
+    // scroll to 
+    $('.play').click( function() {
+        scrollTo();
+    });
     
 });
 
