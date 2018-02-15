@@ -4,7 +4,8 @@ export default function () {
     const options = {
         speed: 3000,
         minDuration: 250,
-        maxDuration: 1500, 
+        maxDuration: 1500,
+        cancelOnUserAction: false 
     };
 
     animateScrollTo(document.querySelector('.board-wrap'),options);
