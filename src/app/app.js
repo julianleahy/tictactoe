@@ -4,6 +4,7 @@ import 'styles/main.scss';
 import 'styles/aos.css'
 
 import scrollTo from './scrollto';
+import {playState} from './ai';
 
 $(function() {
 
@@ -51,6 +52,8 @@ $(function() {
     // scroll to 
     $('.play').click( function() {
         scrollTo();
+        board = playState(board, true)[1];
+        console.log(board);
     });
     
 });
