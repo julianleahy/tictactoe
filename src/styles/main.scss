@@ -205,7 +205,7 @@ section.bottom {
 }
 
 .draw-border {
-    @include btn-border-drawing(#222, #fff, 4px, bottom, right);
+    @include btn-border-drawing( #fff,#222, 4px, bottom, right);
 }
 
 .btn {
