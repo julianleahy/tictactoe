@@ -266,6 +266,51 @@ section.bottom {
       font-size: 30px;
   }
 
+
+// game link
+.game-wrap {
+    position: fixed;
+    top:10px;
+    left: 10px;
+    height: 40px;
+    line-height: 40px;
+    width: 170px;
+}
+
+.tictactoe{
+    position: absolute;
+    top: 0;
+    left: 40px;
+}
+
+.tictactoe > a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.tictactoe > a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out 0s;
+  }
+
+  .tictactoe > a:hover:before {
+    visibility: visible;
+    transform: scaleX(1);
+  }
+
+  .game-logo {
+      color: #fff;
+      font-size: 30px;
+  }
+
    // signature
 
    .signature > img{
@@ -276,3 +321,5 @@ section.bottom {
     cursor: pointer;
     z-index: 99999;
 }
+
+
