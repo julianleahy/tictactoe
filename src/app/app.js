@@ -30,7 +30,8 @@ $(function() {
     $('.play').click( function() {
         $('.wrapper').removeClass('noscroll');
         scrollTo();
-        setTimeout(()=>{ai()},2500)
+        setTimeout(()=>{ai()},1000)
+        
     });
 
 
@@ -68,16 +69,18 @@ $(function() {
                 }
             }
         }
-        setTimeout(()=>{
-            checkWin();
-        },100)
+    
     }
 
     
     const ai = () => {
         board = playState(board, true)[1];
         AI = false;
-        outputTile();
+        setTimeout(()=>{
+            outputTile();
+            checkWin();
+        },1000,)
+       
         
         
     }
