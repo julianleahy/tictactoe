@@ -34,6 +34,7 @@ $(function() {
 
         board[row][col] = false;
         outputTile();
+        ai();
   
     });
 
@@ -43,7 +44,12 @@ $(function() {
             for (var j = 0; j < board[i].length; j++) {
                 switch (board[i][j]) {
                   case false :
-                    $(`#x${i}${j}`).addClass('cross')     
+                    $(`#x${i}${j}`).addClass('cross');
+                    break;
+                  case true :
+                    $(`#x${i}${j}`).addClass('circle');
+                    break;
+                    
                 }
             }
         }
@@ -52,9 +58,13 @@ $(function() {
     // scroll to 
     $('.play').click( function() {
         scrollTo();
-        board = playState(board, true)[1];
-        console.log(board);
+        setTimeout(()=>{ai()},2500)
     });
+
+    const ai = () => {
+        board = playState(board, true)[1];
+        outputTile();
+    }
     
 });
 
