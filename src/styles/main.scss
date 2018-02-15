@@ -265,3 +265,14 @@ section.bottom {
       color: #fff;
       font-size: 30px;
   }
+
+   // signature
+
+   .signature > img{
+    height: 100px;
+    position: fixed;
+    bottom: 0;
+    left: 10px;
+    cursor: pointer;
+    z-index: 99999;
+}
