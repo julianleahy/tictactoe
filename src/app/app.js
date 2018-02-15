@@ -85,12 +85,15 @@ $(function() {
 
     const checkWin = () => {
         if(isWinner(board) === 1  ){
+            AI = true;
             winner(hasWon(), board);
         }else if(isWinner(board) === -1){
+            AI = true;
             setTimeout(()=>{
                 $('.modal').css('display','block');
                 $('.gameover').text('Game Over! You Managed To Draw')
             },2000)
+           
         }
     }
 
@@ -108,6 +111,6 @@ $(function() {
 });
 
 AOS.init({
-    duration : 1000
+    duration : 500
 })
 
