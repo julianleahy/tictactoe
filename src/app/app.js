@@ -9,12 +9,6 @@ import winner from './winner';
 
 $(function() {
 
-    $('.square').attr({
-       'data-aos-anchor' :'#build',
-       'data-aos-anchor-placement' :'top-bottom'
-    });
-
-
     // default board setup
     // when player places a tile the corresponding index will be marked as false
     // computers move will be marked as true
