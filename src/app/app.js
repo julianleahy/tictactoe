@@ -12,7 +12,7 @@ $(function() {
     $('.square').attr({
        'data-aos-anchor' :'#build',
        'data-aos-anchor-placement' :'top-bottom'
-    })
+    });
 
 
     // default board setup
@@ -28,6 +28,7 @@ $(function() {
 
     // scroll to 
     $('.play').click( function() {
+        resetBoard();
         $('.wrapper').removeClass('noscroll');
         scrollTo();
         setTimeout(()=>{ai()},1000)
@@ -102,6 +103,17 @@ $(function() {
                 $('.gameover').text('Game Over! You Managed To Draw')
             },2000)
         }
+    }
+
+    const resetBoard = () => {
+        $('.square').removeClass('circle cross');
+        $('.c0, .c1, .c2').css('background-color', '#222');
+
+        board = [
+            [null, null, null],
+            [null, null, null],
+            [null, null, null]
+        ]
     }
     
 });
