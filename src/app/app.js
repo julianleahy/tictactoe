@@ -62,6 +62,7 @@ $(function() {
 
     // scroll to 
     $('.play').click( function() {
+        $('.wrapper').removeClass('noscroll');
         scrollTo();
         setTimeout(()=>{ai()},2500)
     });
