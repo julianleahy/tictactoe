@@ -33,11 +33,13 @@ export const playState =(board, player) => {
     }
 }
 
+let winningCombo = '';
+
 
 export const isWinner = board => {
 
     let opt = [true, false];
-    let check, winningCombo;
+    let check;
     let allNotNull = true;
     let diagLeftToRight, diagRightToLeft,
         rows, columns;
@@ -103,3 +105,5 @@ export const isWinner = board => {
     return null;
 
 }
+
+export const hasWon = () => winningCombo;

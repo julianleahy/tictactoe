@@ -4,7 +4,8 @@ import 'styles/main.scss';
 import 'styles/aos.css'
 
 import scrollTo from './scrollto';
-import {playState, isWinner} from './ai';
+import {playState, isWinner, hasWon} from './ai';
+import winner from './winner';
 
 $(function() {
 
@@ -24,6 +25,13 @@ $(function() {
     ]
 
     let AI = true;
+
+    // scroll to 
+    $('.play').click( function() {
+        $('.wrapper').removeClass('noscroll');
+        scrollTo();
+        setTimeout(()=>{ai()},2500)
+    });
 
 
     // get row and column from squares id
@@ -65,13 +73,7 @@ $(function() {
         },100)
     }
 
-    // scroll to 
-    $('.play').click( function() {
-        $('.wrapper').removeClass('noscroll');
-        scrollTo();
-        setTimeout(()=>{ai()},2500)
-    });
-
+    
     const ai = () => {
         board = playState(board, true)[1];
         AI = false;
@@ -82,9 +84,11 @@ $(function() {
 
     const checkWin = () => {
         if(isWinner(board) === 1){
-            alert('You Lost')
+            // lost
+            winner(hasWon(), board);
         }else if(isWinner(board) === -1){
-            alert('You Drew')
+            // draw
+            console.log(hasWon(), board);
         }
     }
     
