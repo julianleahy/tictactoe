@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Varela+Round");
+@import url('http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css');
 
 body {
     background-color: #222;
@@ -277,10 +278,17 @@ section.bottom {
     width: 170px;
 }
 
+.game-wrap::after{
+    font-family: 'Ionicons';
+    content: '\f440';
+    color: #fff;
+    font-size: 30px;
+}
+
 .tictactoe{
     position: absolute;
     top: 0;
-    left: 40px;
+    left: 30px;
 }
 
 .tictactoe > a{
