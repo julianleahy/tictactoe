@@ -30,7 +30,38 @@ header {
         color: #fff;
         font-size: 40px;
     }
+
+    .player {
+        position: absolute;
+        left: 52.5%;
+        top:80px;
+        transform: translate(-50%);
+        overflow: hidden;
+        
+        img {
+            position: relative;
+            left: -187px; // 125
+            width: 400px;
+            transition: all 1s ease-in-out;
+        }
+
+        .human {
+            transform: translateX(325px)
+        }
+    }
+
+    .starter {
+        position: absolute;
+        left: 50%; 
+        top: 180px;
+        transform: translate(-50%);
+        color: #fff;
+        font-size: 25px;
+
+    }
 }
+
+
 
 .board-wrap {
     width: 100%;

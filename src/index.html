@@ -26,21 +26,23 @@
     <div class="wrapper noscroll">
 
         <header class="main" id="build">
+            <div class="select">
+                <div class="player">
+                    <img id="turn"  src=<%= require('./images/roplayer.svg') %> />
+                </div>
+                <p class="starter">Select Starter</p>
+            </div>
             <button class="play btn draw-border">Play</button>
         </header>
         <br>
         <br>
 
         <div class="modal">
-
             <div class="modal-content">
                 <span class="close">&times;</span>
                 <p class="gameover"></p>
             </div>
-
-        </div>
-
-        
+        </div>     
 
         <div class="game-wrap">
             <div class="game-logo"></div>
@@ -48,8 +50,6 @@
                 <a>Tic Tac Toe</a>
             </div>
         </div>
-
-
 
         <div class="git-wrap">
             <div class="git-logo">
@@ -59,7 +59,6 @@
                 <a href="https://github.com/julianleahy/tictactoe">View on GitHub</a>
             </div>
         </div>
-
 
         <section class="board-wrap">
             <div class="board">

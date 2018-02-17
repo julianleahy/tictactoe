@@ -19,6 +19,12 @@ $(function() {
     ]
 
     let AI = true;
+    let player = $('#turn');
+
+    $('.select').click(function(){
+        player.toggleClass('human');
+        AI = !AI;
+    })
 
     // scroll to 
     $('.play').click( function() {
@@ -75,6 +81,7 @@ $(function() {
     }
 
     const ai = () => {
+        if(!AI) return;
         board = playState(board, true)[1];
         AI = false;
         setTimeout(()=>{
@@ -85,10 +92,8 @@ $(function() {
 
     const checkWin = () => {
         if(isWinner(board) === 1  ){
-            AI = true;
             winner(hasWon(), board);
         }else if(isWinner(board) === -1){
-            AI = true;
             setTimeout(()=>{
                 $('.modal').css('display','block');
                 $('.gameover').text('Game Over! You Managed To Draw')
@@ -100,6 +105,7 @@ $(function() {
     const resetBoard = () => {
         $('.square').removeClass('circle cross');
         $('.c0, .c1, .c2').css('background-color', '#222');
+        AI = (player.hasClass('human')) ? false : true;
 
         board = [
             [null, null, null],
