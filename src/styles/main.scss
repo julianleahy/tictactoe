@@ -57,7 +57,12 @@ header {
         transform: translate(-50%);
         color: #fff;
         font-size: 25px;
+        transition: all .4s ease-in-out;
 
+    
+        &:hover {
+            color: #000;
+        }
     }
 }
 
