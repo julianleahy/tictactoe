@@ -24,6 +24,8 @@ $(function () {
     $('.select').click(function () {
         player.toggleClass('human');
         AI = !AI;
+        resetBoard();
+        setTimeout(() => { ai() }, 1000)
     })
 
     // scroll to 
