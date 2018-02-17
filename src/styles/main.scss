@@ -40,7 +40,7 @@ header {
         
         img {
             position: relative;
-            left: -187px; // 125
+            left: -170px; // 125
             width: 400px;
             transition: all 1s ease-in-out;
         }
@@ -60,6 +60,44 @@ header {
 
     }
 }
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-height: 672px) {
+
+    header { 
+        .player { top:110px;}  
+        
+        .starter {
+            top: 210px;
+        }
+    }
+    
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-height: 850px) {
+
+    header { 
+        .player { top:130px;}  
+        
+        .starter {
+            top: 230px;
+        }
+    }
+
+}
+
+@media (min-width: 830px) {
+
+    header {
+        .player {
+            img { left: -185px; }
+        }
+    }
+
+}
+
+
 
 
 
