@@ -3,16 +3,16 @@ import 'styles/normalize.css';
 import 'styles/main.scss';
 import 'styles/aos.css'
 
-import {scrollTo, scrollEnd} from './scrollto';
-import {playState, isWinner, hasWon} from './ai';
+import { scrollTo, scrollEnd } from './scrollto';
+import { playState, isWinner, hasWon } from './ai';
 import winner from './winner';
 
-$(function() {
+$(function () {
 
     // default board setup
     // when player places a tile the corresponding index will be marked as false
     // computers move will be marked as true
-    let  board = [
+    let board = [
         [null, null, null],
         [null, null, null],
         [null, null, null]
@@ -21,44 +21,49 @@ $(function() {
     let AI = true;
     let player = $('#turn');
 
-    $('.select').click(function(){
+    $('.select').click(function () {
         player.toggleClass('human');
         AI = !AI;
     })
 
     // scroll to 
-    $('.play').click( function() {
+    $('.play').click(function () {
         resetBoard();
         $('.wrapper').removeClass('noscroll');
         scrollTo();
-        setTimeout(()=>{ai()},1000)
-        
+        setTimeout(() => { ai() }, 1000)
+
     });
 
-    $('.close').click(function(){
+    $('.close').click(function () {
         $('.modal').fadeOut('slow');
         scrollEnd();
-        setTimeout(function(){
+        setTimeout(function () {
             $('.wrapper').addClass('noscroll');
-        },2500)
+        }, 2500)
     })
 
 
     // get row and column from squares id
     // place false in corresponding index on board
-    $('.square').click( function() {
+    $('.square').click(function () {
 
-        if(AI) return;
+        if (AI) return;
 
         const cell = $(this).attr('id');
         const row = parseInt(cell[1]);
         const col = parseInt(cell[2]);
 
-        board[row][col] = false;
-        outputTile();
-        AI = true;
-        ai();
-          
+        if (board[row][col] != null) {
+            // player clicked occupied space
+            return;
+        } else {
+            board[row][col] = false;
+            outputTile();
+            AI = true;
+            ai();
+        }
+
     });
 
     // loop over board 
@@ -77,28 +82,28 @@ $(function() {
                 }
             }
         }
-    
+
     }
 
     const ai = () => {
-        if(!AI) return;
+        if (!AI) return;
         board = playState(board, true)[1];
         AI = false;
-        setTimeout(()=>{
+        setTimeout(() => {
             outputTile();
             checkWin();
-        },1000,)  
+        }, 1000, )
     }
 
     const checkWin = () => {
-        if(isWinner(board) === 1  ){
+        if (isWinner(board) === 1) {
             winner(hasWon(), board);
-        }else if(isWinner(board) === -1){
-            setTimeout(()=>{
-                $('.modal').css('display','block');
+        } else if (isWinner(board) === -1) {
+            setTimeout(() => {
+                $('.modal').css('display', 'block');
                 $('.gameover').text('Game Over! You Managed To Draw')
-            },2000)
-           
+            }, 2000)
+
         }
     }
 
@@ -113,10 +118,10 @@ $(function() {
             [null, null, null]
         ]
     }
-    
+
 });
 
 AOS.init({
-    duration : 500
+    duration: 500
 })
 
