@@ -42,7 +42,7 @@ header {
             position: relative;
             left: -170px; // 125
             width: 400px;
-            transition: all 1s ease-in-out;
+            transition: all .5s linear;
         }
 
         .human {
@@ -57,14 +57,17 @@ header {
         transform: translate(-50%);
         color: #fff;
         font-size: 25px;
-        transition: all .4s ease-in-out;
+        transition: color 1s;
 
-    
         &:hover {
-            color: #000;
+            cursor: pointer;
+            color: black;
         }
+        
     }
 }
+
+
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-height: 672px) {
