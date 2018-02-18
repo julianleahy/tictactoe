@@ -21,6 +21,8 @@ $(function () {
     let AI = true;
     let player = $('#turn');
 
+    let modal = $('.modal');
+
     $('.select').click(function () {
         player.toggleClass('human');
         AI = !AI;
@@ -36,15 +38,6 @@ $(function () {
         setTimeout(() => { ai() }, 1000)
 
     });
-
-    $('.close').click(function () {
-        $('.modal').fadeOut('slow');
-        scrollEnd();
-        setTimeout(function () {
-            $('.wrapper').addClass('noscroll');
-        }, 2500)
-    })
-
 
     // get row and column from squares id
     // place false in corresponding index on board
@@ -119,6 +112,27 @@ $(function () {
             [null, null, null],
             [null, null, null]
         ]
+    }
+
+
+    // close modal either by click x or window
+
+    $('.close').click(function () {
+        newGame();
+    })
+
+    $(window).click(function (event) {
+        if (event.target == modal[0]) {
+            newGame();
+        }
+    })
+
+    const newGame = () => {
+        modal.fadeOut('slow');
+        scrollEnd();
+        setTimeout(function () {
+            $('.wrapper').addClass('noscroll');
+        }, 2500)
     }
 
 });
